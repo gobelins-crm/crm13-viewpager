@@ -41,14 +41,22 @@ public class PlayListAdapter extends ArrayAdapter<Song> {
         }
 
         Song song = getItem(position);
-        String coverArt = song.getString("tracks[0].release_image");
-        Log.d("app", coverArt);
+
+        String coverArt;
+
+        try{
+            coverArt = song.getString("tracks[0].release_image");
+        } catch (IndexOutOfBoundsException e) {
+            coverArt = null;
+        }
 
         ((TextView) view.findViewById(android.R.id.text1)).setText(song.getArtistName());
         ((TextView) view.findViewById(android.R.id.text2)).setText(song.getTitle());
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        Picasso.with(getContext()).load(coverArt).into(imageView);
+        if (coverArt != null) {
+            ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
+            Picasso.with(getContext()).load(coverArt).into(imageView);
+        }
 
         return view;
     }
