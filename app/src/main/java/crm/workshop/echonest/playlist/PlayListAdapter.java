@@ -1,4 +1,4 @@
-package louisbl.fr.hellocrm.playlist;
+package crm.workshop.echonest.playlist;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -32,8 +32,8 @@ public class PlayListAdapter extends ArrayAdapter<Song> {
         }
 
         Song song = getItem(position);
-        ((TextView)view.findViewById(android.R.id.text1)).setText(song.getArtistName());
-        ((TextView)view.findViewById(android.R.id.text2)).setText(song.getTitle());
+        ((TextView) view.findViewById(android.R.id.text1)).setText(song.getArtistName());
+        ((TextView) view.findViewById(android.R.id.text2)).setText(song.getTitle());
 
         return view;
     }

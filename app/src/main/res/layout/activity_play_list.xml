@@ -3,5 +3,5 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="louisbl.fr.hellocrm.playlist.PlayListActivity"
+    tools:context="crm.workshop.echonest.playlist.PlayListActivity"
     tools:ignore="MergeRootFrame" />

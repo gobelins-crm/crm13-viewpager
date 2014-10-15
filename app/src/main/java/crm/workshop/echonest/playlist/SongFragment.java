@@ -1,5 +1,4 @@
-package louisbl.fr.hellocrm.playlist;
-
+package crm.workshop.echonest.playlist;
 
 
 import android.os.Bundle;
@@ -9,11 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import louisbl.fr.hellocrm.R;
-
 /**
  * A simple {@link Fragment} subclass.
- *
  */
 public class SongFragment extends Fragment {
     private String mTitle;
@@ -34,8 +30,8 @@ public class SongFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(android.R.layout.simple_list_item_2, container,
                 false);
-        ((TextView)view.findViewById(android.R.id.text1)).setText(mTitle);
-        ((TextView)view.findViewById(android.R.id.text2)).setText(mArtistName);
+        ((TextView) view.findViewById(android.R.id.text1)).setText(mTitle);
+        ((TextView) view.findViewById(android.R.id.text2)).setText(mArtistName);
 
         return view;
     }

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="louisbl.fr.hellocrm.playlist.SongFragment">
+    tools:context="crm.workshop.echonest.playlist.SongFragment">
 
     <TextView
         android:id="@+id/song_title"

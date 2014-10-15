@@ -1,13 +1,11 @@
-package louisbl.fr.hellocrm.playlist;
+package crm.workshop.echonest.playlist;
 
-import android.content.AsyncTaskLoader;
 import android.content.Context;
 
 import com.echonest.api.v4.EchoNestException;
 import com.echonest.api.v4.Playlist;
 
-import server.EchoNestWrapper;
-import server.EchoNestWrapperException;
+import server.ENWrapper;
 
 /**
  * Created by lbeltramo on 14/10/2014.
@@ -25,12 +23,9 @@ public class PlayListLoader extends android.support.v4.content
     @Override
     public Playlist loadInBackground() {
         try {
-            mPlaylist = EchoNestWrapper.getArtistRadio(mResults,
+            mPlaylist = ENWrapper.with(getContext()).getArtistRadio(mResults,
                     mArtist);
         } catch (EchoNestException e) {
-            mPlaylist = null;
-            e.printStackTrace();
-        } catch (EchoNestWrapperException e) {
             mPlaylist = null;
             e.printStackTrace();
         }

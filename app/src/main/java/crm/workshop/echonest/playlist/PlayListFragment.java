@@ -1,7 +1,6 @@
-package louisbl.fr.hellocrm.playlist;
+package crm.workshop.echonest.playlist;
 
 import android.app.Activity;
-import android.content.Loader;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,7 @@ import android.widget.Toast;
 import com.echonest.api.v4.Playlist;
 import com.echonest.api.v4.Song;
 
-import louisbl.fr.hellocrm.R;
+import crm.workshop.echonest.R;
 
 /**
  * A fragment representing a list of Items.
@@ -50,6 +49,13 @@ public class PlayListFragment extends android.support.v4.app.Fragment implements
      */
     private PlayListAdapter mAdapter;
 
+    /**
+     * Mandatory empty constructor for the fragment manager to instantiate the
+     * fragment (e.g. upon screen orientation changes).
+     */
+    public PlayListFragment() {
+    }
+
     public static PlayListFragment newInstance(int results, String artist) {
         PlayListFragment fragment = new PlayListFragment();
         Bundle args = new Bundle();
@@ -57,13 +63,6 @@ public class PlayListFragment extends android.support.v4.app.Fragment implements
         args.putString(ARG_ARTIST, artist);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
-    public PlayListFragment() {
     }
 
     @Override

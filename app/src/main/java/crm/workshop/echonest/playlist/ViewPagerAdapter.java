@@ -1,4 +1,4 @@
-package louisbl.fr.hellocrm.playlist;
+package crm.workshop.echonest.playlist;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +14,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-       return PlayListFragment.newInstance(10, "Alec Empire");
+        return PlayListFragment.newInstance(10, "Alec Empire");
     }
 
     @Override

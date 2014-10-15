@@ -1,11 +1,9 @@
-package louisbl.fr.hellocrm.playlist;
+package crm.workshop.echonest.playlist;
 
-import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,8 +11,8 @@ import android.view.View;
 
 import com.echonest.api.v4.Song;
 
-import louisbl.fr.hellocrm.R;
-import server.EchoNestWrapper;
+import crm.workshop.echonest.R;
+import server.ENWrapper;
 
 public class PlayListActivity extends FragmentActivity implements PlayListFragment
         .OnSongClickedListener {
@@ -22,8 +20,6 @@ public class PlayListActivity extends FragmentActivity implements PlayListFragme
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        EchoNestWrapper.setApiKey(this);
 
         setContentView(R.layout.app_container);
 
