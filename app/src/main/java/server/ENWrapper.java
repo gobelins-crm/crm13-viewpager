@@ -31,6 +31,8 @@ public class ENWrapper {
     public Playlist getArtistRadio(int results, String artist) throws
             EchoNestException {
         BasicPlaylistParams params = new BasicPlaylistParams();
+        params.addIDSpace("7digital-US");
+        params.includeTracks();
         params.addArtist(artist);
         params.setType(BasicPlaylistParams.PlaylistType.ARTIST_RADIO);
         params.setResults(results);
