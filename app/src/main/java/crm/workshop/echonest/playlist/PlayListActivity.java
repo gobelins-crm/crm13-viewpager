@@ -1,6 +1,9 @@
 package crm.workshop.echonest.playlist;
 
+import android.app.AlarmManager;
 import android.app.FragmentTransaction;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,7 +14,10 @@ import android.view.View;
 
 import com.echonest.api.v4.Song;
 
+import java.util.Calendar;
+
 import crm.workshop.echonest.R;
+import crm.workshop.echonest.utils.AlarmReceiver;
 import server.ENWrapper;
 
 public class PlayListActivity extends FragmentActivity implements PlayListFragment
@@ -27,6 +33,26 @@ public class PlayListActivity extends FragmentActivity implements PlayListFragme
             changeLeftFragment(PlayListFragment.newInstance(10,
                     "Alec Empire"));
         }
+
+        setAlarm();
+    }
+
+    private void setAlarm() {
+        Intent alarmIntent;
+        PendingIntent pendingIntent;
+        AlarmManager alarmManager = (AlarmManager) getSystemService
+                (ALARM_SERVICE);
+
+        alarmIntent = new Intent(PlayListActivity.this, AlarmReceiver.class);
+        pendingIntent = PendingIntent.getBroadcast(PlayListActivity.this, 0, alarmIntent, 0);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.SECOND, 30);
+
+        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(),pendingIntent);
+//        calendar.set(Calendar.HOUR_OF_DAY, 10);
+//        calendar.set(Calendar.MINUTE, 00);
+//        calendar.set(Calendar.SECOND, 0);
     }
 
     protected void changeLeftFragment(Fragment fragment) {
